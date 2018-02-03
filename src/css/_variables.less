@@ -1,0 +1,41 @@
+/* --- fonts --- */
+@baseFont: 'Arial', 'Helvetica', 'Verdana', 'sans-serif';
+
+/* --- colors --- */
+@baseColor: #404040;
+@primary: #4c8eb4;
+@secondary: #808080;
+@success: #00a65a;
+@warning: #f39c12;
+@danger: #dd4b39;
+@light: #fff;
+@dark: #000;
+
+/* --- media queries --- */
+@small: ~'screen and ( min-width: 576px )';
+@medium: ~'screen and ( min-width: 768px )';
+@large: ~'screen and ( min-width: 992px )';
+@extra-large: ~'screen and ( min-width: 1200px )';
+
+/* ----- prefixes ----- */
+.box-shadow( @box-shadow ) {
+	-webkit-box-shadow: @box-shadow;
+	        box-shadow: @box-shadow;
+}
+
+.transition( @transition ) {
+	-webkit-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+.transform( @transform ) {
+	-webkit-transform: @transform;
+	    -ms-transform: @transform;
+	        transform: @transform;
+}
+
+.animation-delay( @animation-delay ) {
+	-webkit-animation-delay: @animation-delay;
+	        animation-delay: @animation-delay;
+}

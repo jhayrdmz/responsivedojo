@@ -1,0 +1,52 @@
+@import url( '_variables.less' );
+
+.lightbox {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background-color: rgba( 0, 0, 0, .8 );
+
+	.lightbox-container {
+		height: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		        justify-content: center;
+
+		.close-lightbox {
+			color: #fff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 10px 20px;
+			cursor: pointer;
+			font-size: 1.714em;
+			.transition( .3s );
+
+			&:hover {
+				background-color: @danger;
+			}
+		}
+
+		.lightbox-image {
+			img {
+				border: 5px solid @light;
+			}
+		}
+	}
+}

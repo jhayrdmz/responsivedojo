@@ -1,0 +1,95 @@
+@import url( '_variables.less' );
+
+.alert {
+	display: block;
+	padding: 8px 10px;
+	border-width: 1px;
+	border-left-width: 10px;
+	border-style: solid;
+	font-size: 1em;
+	line-height: 1.45;
+	font-family: inherit;
+	margin-bottom: 10px;
+	position: relative;
+
+	a, .alert-link {
+		font-weight: 700;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.alert-close {
+		font-size: 1.286em;
+		line-height: 1.45;
+		font-family: inherit;
+		background: transparent;
+		border-radius: 0;
+		color: @light;
+		position: absolute;
+		top: -3px;
+		right: 5px;
+		cursor: pointer;
+		appearance: none;
+	}
+
+	&.alert-icon {
+		padding-left: 35px;
+
+		.icon {
+			position: absolute;
+			top: 6px;
+			left: 10px;
+		}
+	}
+}
+
+.alert-basic {
+	background-color: @baseColor;
+	border-color: darken( @baseColor, 10% );
+	color: @light;
+}
+
+.alert-primary {
+	background-color: @primary;
+	border-color: darken( @primary, 10% );
+	color: @light;
+}
+
+.alert-secondary {
+	background-color: @secondary;
+	border-color: darken( @secondary, 10% );
+	color: @light;
+}
+
+.alert-success {
+	background-color: @success;
+	border-color: darken( @success, 10% );
+	color: @light;
+}
+
+.alert-warning {
+	background-color: @warning;
+	border-color: darken( @warning, 10% );
+	color: @light;
+}
+
+.alert-danger {
+	background-color: @danger;
+	border-color: darken( @danger, 10% );
+	color: @light;
+}
+
+.alert-light {
+	background-color: @light;
+	border-color: darken( @light, 10% );
+	color: @dark;
+}
+
+.alert-dark {
+	background-color: @dark;
+	border-color: lighten( @dark, 10% );
+	color: @light;
+}

@@ -1,0 +1,48 @@
+@import url( '_variables.less' );
+
+.pagination {
+	margin: 10px 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	        align-items: center;
+
+	> li {
+		margin: 0;
+		list-style: none;
+
+		> a  {
+			padding: 5px 10px;
+			border: 1px solid @secondary;
+			margin-left: -1px;
+			display: block;
+			.transition( .3s );
+
+			&:hover {
+				background-color: @primary;
+				color: @light;
+			}
+		}
+
+		&:first-child {
+			> a {
+				border-top-left-radius: 3px;
+				border-bottom-left-radius: 3px;
+			}
+		}
+
+		&:last-child {
+			> a {
+				border-top-right-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
+		}
+	}
+}

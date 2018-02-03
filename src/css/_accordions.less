@@ -1,0 +1,35 @@
+.accordion-menu {
+	margin-bottom: 10px;
+
+	.accordion-section {
+		&:last-child {
+			.accordion-header {
+				border-bottom: transparent;
+			}
+		}
+
+		&.active {
+			.accordion-header {
+				background-color: darken( @primary, 10% );
+			}
+		}
+
+		.accordion-header {
+			background-color: @primary;
+			color: @light;
+			padding: 10px 20px;
+			border-bottom: 1px solid darken( @primary, 15% );
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			        user-select: none;
+		}
+
+		.accordion-content {
+			display: none;
+			background-color: @light;
+			padding: 30px 50px;
+		}
+	}
+}

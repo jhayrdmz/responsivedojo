@@ -1,0 +1,167 @@
+@import url( '_variables.less' );
+
+.btn {
+	font-size: 1em;
+	line-height: 1.45;
+	font-family: inherit;
+	border-radius: 3px;
+	padding: 8px 15px;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	        appearance: none;
+}
+
+.btn-basic {
+	background-color: @baseColor;
+	color: @light;
+}
+
+.btn-primary {
+	background-color: @primary;
+	color: @light;
+}
+
+.btn-secondary {
+	background-color: @secondary;
+	color: @light;
+}
+
+.btn-success {
+	background-color: @success;
+	color: @light;
+}
+
+.btn-warning {
+	background-color: @warning;
+	color: @light;
+}
+
+.btn-danger {
+	background-color: @danger;
+	color: @light;
+}
+
+.btn-light {
+	background-color: @light;
+	color: @dark;
+}
+
+.btn-dark {
+	background-color: @dark;
+	color: @light;
+}
+
+[class*="btn-outline"] {
+	background-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	.transition( .3s );
+}
+
+.btn-outline {
+	&-basic {
+		border-color: @baseColor;
+
+		&:hover {
+			background-color: @baseColor;
+			color: @light;
+		}
+	}
+
+	&-primary {
+		border-color: @primary;
+		color: @primary;
+
+		&:hover {
+			background-color: @primary;
+			color: @light;
+		}
+	}
+
+	&-secondary {
+		border-color: @secondary;
+		color: @secondary;
+
+		&:hover {
+			background-color: @secondary;
+			color: @light;
+		}
+	}
+
+	&-success {
+		border-color: @success;
+		color: @success;
+
+		&:hover {
+			background-color: @success;
+			color: @light;
+		}
+	}
+
+	&-warning {
+		border-color: @warning;
+		color: @warning;
+
+		&:hover {
+			background-color: @warning;
+			color: @light;
+		}
+	}
+
+	&-danger {
+		border-color: @danger;
+		color: @danger;
+
+		&:hover {
+			background-color: @danger;
+			color: @light;
+		}
+	}
+
+	&-light {
+		border-color: @light;
+		color: @light;
+
+		&:hover {
+			background-color: @light;
+			color: @dark;
+		}
+	}
+
+	&-dark {
+		border-color: @dark;
+		color: @dark;
+
+		&:hover {
+			background-color: @dark;
+			color: @light;
+		}
+	}
+}
+
+.btn-sm {
+	padding: 5px 10px;
+}
+
+.btn-lg {
+	padding: 12px 30px;
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.btn-icon {
+	.icon-left {
+		margin-right: 3px;
+	}
+
+	.icon-right {
+		margin-left: 3px;
+	}
+}

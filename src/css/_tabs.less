@@ -1,0 +1,51 @@
+@import url( '_variables.less' );
+
+.tab-container {
+	.tab-header {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+
+		> * {
+			background-color: #fff;
+			list-style: none;
+			text-decoration: none;
+			padding: 15px 20px;
+			cursor: pointer;
+			border: 0;
+			border-bottom: 3px solid transparent;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			        appearance: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			        user-select: none;
+			.transition( .5s );
+
+			&:hover {
+				border-color: @primary;
+			}
+
+			&.active {
+				border-color: @primary;
+			}
+		}
+
+		&.tab-header-block {
+			> * {
+				
+			}
+		}
+	}
+
+	.tab-content {
+		display: none;
+		padding: 20px;
+		background: #fff;
+	}
+}

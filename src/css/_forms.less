@@ -1,0 +1,792 @@
+@import url( '_variables.less' );
+
+.form-group {
+	margin-bottom: 15px;
+
+	label {
+		display: block;
+		margin-bottom: 2px;
+
+		&.required {
+			position: relative;
+			padding-left: 12px;
+
+			&:before {
+				content: '*';
+				color: @danger;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	.form-input {
+		color: @baseColor;
+		background-color: @light;
+		border-radius: 3px;
+		display: block;
+		width: 100%;
+		padding: 7px 15px;
+		font-size: 1em;
+		line-height: 1.45;
+		font-family: inherit;
+		border: 1px solid #f2f2f2;
+		.transition( .3s );
+
+		&:focus {
+			border-color: @primary;
+		}
+	}
+
+	.form-input[readonly] {
+		background-color: #f2f2f2;
+	}
+
+	select {
+		&.form-input {
+			background-image: url( '../images/icons/arrow-down.png' );
+			background-position: right 15px center;
+			background-repeat: no-repeat;
+			background-size: 12px;
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			        appearance: none;
+		}
+	}
+
+	select.form-input[readonly] {
+		background-color: @light;
+	}
+
+	textarea {
+		&.form-input {
+			overflow-y: auto;
+			resize: vertical;
+			min-height: 90px;
+		}
+	}
+
+	.input-error {
+		color: @danger;
+		font-size: 0.857em;
+		display: block;
+	}
+
+	&.has-addon {
+		.form-group-addon {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			        flex-wrap: wrap;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			        align-items: center;
+
+			&.transparent {
+				border-radius: 3px;
+				border: 1px solid #f2f2f2;
+				.transition( .3s );
+
+				&.focused {
+					border-color: @primary;
+				}
+
+				.addon {
+					border: 0 !important;
+					background-color: @light;
+				}
+
+				.form-input {
+					border: 0;
+
+					&:not( :first-child ) {
+						padding-left: 0;
+					}
+
+					&:not( :last-child ) {
+						padding-right: 0;
+					}
+				}
+			}
+
+			.addon {
+				padding: 5px 15px;
+				background-color: #f6f6f6;
+				height: 36px;
+				border: 1px solid #f2f2f2;
+				border-radius: 3px;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				        flex-wrap: wrap;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				-ms-flex-align: center;
+				        align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				-ms-flex-pack: center;
+				        justify-content: center;
+
+				&:not( :first-child ) {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				&:not( :last-child ) {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+					border-left: 1px solid #f2f2f2;
+				}
+
+				&:first-child {
+					border-left: 1px solid #f2f2f2;
+				}
+			}
+
+			.form-input {
+				max-width: 100%;
+				-webkit-flex-basis: 0;
+				    -ms-flex-preferred-size: 0;
+				        flex-basis: 0;
+				-webkit-box-flex: 1;
+				-webkit-flex-grow: 1;
+				    -ms-flex-positive: 1;
+				        flex-grow: 1;
+
+				&:focus {
+					border-color: @primary;
+				}
+
+				&:not( :first-child ) {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				&:not( :last-child ) {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+			}
+		}
+	}
+}
+
+.form-check {
+	label {
+		margin-bottom: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		input[type=checkbox] {
+			margin-right: 5px;
+		}
+
+		input[type=radio] {
+			margin-right: 5px;
+		}
+
+		> span, > a {
+			-webkit-user-select: none;
+			   -moz-user-select: none;
+			    -ms-user-select: none;
+			        user-select: none;
+		}
+
+		&.circle {
+			position: relative;
+
+			input[type=checkbox], input[type=radio] {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 15px;
+				height: 15px;
+				z-index: 2;
+				opacity: 0;
+
+				&:checked {
+					+ span {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					+ a {
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			> span, > a {
+				padding-left: 25px;
+
+				&:before {
+					content: '';
+					display: block;
+					width: 16px;
+					height: 16px;
+					border-radius: 100%;
+					border: 1px solid @baseColor;
+					position: absolute;
+					top: 1px;
+					left: 0;
+				}
+
+				&:after {
+					content: '';
+					display: block;
+					width: 10px;
+					height: 10px;
+					border-radius: 100%;
+					background: @baseColor;
+					position: absolute;
+					top: 5px;
+					left: 4px;
+					opacity: 0;
+					.transition( .3s );
+				}
+			}
+
+			&.primary {
+				> span, > a {
+					&:before {
+						border-color: @primary;
+					}
+
+					&:after {
+						background: @primary;
+					}
+				}
+			}
+
+			&.secondary {
+				> span, > a {
+					&:before {
+						border-color: @secondary;
+					}
+
+					&:after {
+						background: @secondary;
+					}
+				}
+			}
+
+			&.success {
+				> span, > a {
+					&:before {
+						border-color: @success;
+					}
+
+					&:after {
+						background: @success;
+					}
+				}
+			}
+
+			&.warning {
+				> span, > a {
+					&:before {
+						border-color: @warning;
+					}
+
+					&:after {
+						background: @warning;
+					}
+				}
+			}
+
+			&.danger {
+				> span, > a {
+					&:before {
+						border-color: @danger;
+					}
+
+					&:after {
+						background: @danger;
+					}
+				}
+			}
+
+			&.light {
+				> span, > a {
+					&:before {
+						border-color: @light;
+					}
+
+					&:after {
+						background: @light;
+					}
+				}
+			}
+
+			&.dark {
+				> span, > a {
+					&:before {
+						border-color: @dark;
+					}
+
+					&:after {
+						background: @dark;
+					}
+				}
+			}
+		}
+
+		&.square {
+			position: relative;
+
+			input[type=checkbox], input[type=radio] {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 15px;
+				height: 15px;
+				z-index: 2;
+				opacity: 0;
+
+				&:checked {
+					+ span {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					+ a {
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			> span, > a {
+				padding-left: 25px;
+
+				&:before {
+					content: '';
+					display: block;
+					width: 16px;
+					height: 16px;
+					border: 1px solid @baseColor;
+					position: absolute;
+					top: 1px;
+					left: 0;
+				}
+
+				&:after {
+					content: '';
+					display: block;
+					width: 10px;
+					height: 10px;
+					background: @baseColor;
+					position: absolute;
+					top: 5px;
+					left: 4px;
+					opacity: 0;
+					.transition( .3s );
+				}
+			}
+
+			&.primary {
+				> span, > a {
+					&:before {
+						border-color: @primary;
+					}
+
+					&:after {
+						background: @primary;
+					}
+				}
+			}
+
+			&.secondary {
+				> span, > a {
+					&:before {
+						border-color: @secondary;
+					}
+
+					&:after {
+						background: @secondary;
+					}
+				}
+			}
+
+			&.success {
+				> span, > a {
+					&:before {
+						border-color: @success;
+					}
+
+					&:after {
+						background: @success;
+					}
+				}
+			}
+
+			&.warning {
+				> span, > a {
+					&:before {
+						border-color: @warning;
+					}
+
+					&:after {
+						background: @warning;
+					}
+				}
+			}
+
+			&.danger {
+				> span, > a {
+					&:before {
+						border-color: @danger;
+					}
+
+					&:after {
+						background: @danger;
+					}
+				}
+			}
+
+			&.light {
+				> span, > a {
+					&:before {
+						border-color: @light;
+					}
+
+					&:after {
+						background: @light;
+					}
+				}
+			}
+
+			&.dark {
+				> span, > a {
+					&:before {
+						border-color: @dark;
+					}
+
+					&:after {
+						background: @dark;
+					}
+				}
+			}
+		}
+
+		&.square-check {
+			position: relative;
+
+			input[type=checkbox], input[type=radio] {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 15px;
+				height: 15px;
+				z-index: 2;
+				opacity: 0;
+
+				&:checked {
+					+ span {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					+ a {
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			> span, > a {
+				padding-left: 25px;
+
+				&:before {
+					content: '';
+					display: block;
+					width: 16px;
+					height: 16px;
+					border: 1px solid @baseColor;
+					position: absolute;
+					top: 1px;
+					left: 0;
+				}
+
+				&:after {
+					content: '';
+					display: block;
+					width: 4px;
+					height: 10px;
+					border: 2px solid @baseColor;
+					border-left: 0;
+					border-top: 0;
+					position: absolute;
+					top: 3px;
+					left: 6px;
+					opacity: 0;
+					.transition( .3s );
+					.transform( rotate( 45deg ) );
+				}
+			}
+
+			&.primary {
+				> span, > a {
+					&:before {
+						border-color: @primary;
+					}
+
+					&:after {
+						border-color: @primary;
+					}
+				}
+			}
+
+			&.secondary {
+				> span, > a {
+					&:before {
+						border-color: @secondary;
+					}
+
+					&:after {
+						border-color: @secondary;
+					}
+				}
+			}
+
+			&.success {
+				> span, > a {
+					&:before {
+						border-color: @success;
+					}
+
+					&:after {
+						border-color: @success;
+					}
+				}
+			}
+
+			&.warning {
+				> span, > a {
+					&:before {
+						border-color: @warning;
+					}
+
+					&:after {
+						border-color: @warning;
+					}
+				}
+			}
+
+			&.danger {
+				> span, > a {
+					&:before {
+						border-color: @danger;
+					}
+
+					&:after {
+						border-color: @danger;
+					}
+				}
+			}
+
+			&.light {
+				> span, > a {
+					&:before {
+						border-color: @light;
+					}
+
+					&:after {
+						border-color: @light;
+					}
+				}
+			}
+
+			&.dark {
+				> span, > a {
+					&:before {
+						border-color: @dark;
+					}
+
+					&:after {
+						border-color: @dark;
+					}
+				}
+			}
+		}
+
+		&.circle-check {
+			position: relative;
+
+			input[type=checkbox], input[type=radio] {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 15px;
+				height: 15px;
+				z-index: 2;
+				opacity: 0;
+
+				&:checked {
+					+ span {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					+ a {
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			> span, > a {
+				padding-left: 25px;
+
+				&:before {
+					content: '';
+					display: block;
+					width: 16px;
+					height: 16px;
+					border-radius: 100%;
+					border: 1px solid @baseColor;
+					position: absolute;
+					top: 1px;
+					left: 0;
+				}
+
+				&:after {
+					content: '';
+					display: block;
+					width: 3px;
+					height: 7px;
+					border: 2px solid @baseColor;
+					border-left: 0;
+					border-top: 0;
+					position: absolute;
+					top: 5px;
+					left: 7px;
+					opacity: 0;
+					.transition( .3s );
+					.transform( rotate( 45deg ) );
+				}
+			}
+
+			&.primary {
+				> span, > a {
+					&:before {
+						border-color: @primary;
+					}
+
+					&:after {
+						border-color: @primary;
+					}
+				}
+			}
+
+			&.secondary {
+				> span, > a {
+					&:before {
+						border-color: @secondary;
+					}
+
+					&:after {
+						border-color: @secondary;
+					}
+				}
+			}
+
+			&.success {
+				> span, > a {
+					&:before {
+						border-color: @success;
+					}
+
+					&:after {
+						border-color: @success;
+					}
+				}
+			}
+
+			&.warning {
+				> span, > a {
+					&:before {
+						border-color: @warning;
+					}
+
+					&:after {
+						border-color: @warning;
+					}
+				}
+			}
+
+			&.danger {
+				> span, > a {
+					&:before {
+						border-color: @danger;
+					}
+
+					&:after {
+						border-color: @danger;
+					}
+				}
+			}
+
+			&.light {
+				> span, > a {
+					&:before {
+						border-color: @light;
+					}
+
+					&:after {
+						border-color: @light;
+					}
+				}
+			}
+
+			&.dark {
+				> span, > a {
+					&:before {
+						border-color: @dark;
+					}
+
+					&:after {
+						border-color: @dark;
+					}
+				}
+			}
+		}
+	}
+
+	&.form-check-inline {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		        align-items: center;
+
+		label {
+			margin-right: 20px;
+		}
+	}
+}

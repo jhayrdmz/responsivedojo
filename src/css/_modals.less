@@ -1,0 +1,71 @@
+@import url( '_variables.less' );
+
+.back-drop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	overflow-y: auto;
+
+	&.modal-middle {
+		.modal-area {
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+		}
+	}
+
+	&.modal-bottom {
+		.modal-area {
+			-webkit-box-align: end;
+			-webkit-align-items: flex-end;
+			    -ms-flex-align: end;
+			        align-items: flex-end;
+		}
+	}
+
+	.modal-area {
+		width: 100%;
+		min-height: 100vh;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+
+		.content-area {
+			position: relative;
+			padding: 50px 30px;
+			width: 100%;
+			height: 100%;
+
+			.close-modal {
+				font-size: 2.000em;
+				color: @baseColor;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				cursor: pointer;
+				.transition( .3s );
+
+				&:hover {
+					background-color: @danger;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

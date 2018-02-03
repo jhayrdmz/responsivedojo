@@ -1,0 +1,48 @@
+ul {
+	margin-bottom: 10px;
+
+	li {
+		margin-left: 20px;
+		margin-bottom: 5px;
+
+		ul {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+	}
+
+	&.no-style {
+		li {
+			margin: 0;
+			list-style: none;
+		}
+	}
+}
+
+ol {
+	margin-bottom: 10px;
+
+	li {
+		margin-left: 20px;
+		margin-bottom: 5px;
+		list-style: decimal-leading-zero;
+
+		ol {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+	}
+
+	&.no-style {
+		li {
+			margin: 0;
+			list-style: none;
+		}
+	}
+}
+
+dl {
+	dt {
+		font-weight: 700;
+	}
+}
