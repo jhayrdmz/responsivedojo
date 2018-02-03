@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
+show_downloads: true
 title: "Responsive Dojo"
 description: "A front-end framework for faster and easier web development."
